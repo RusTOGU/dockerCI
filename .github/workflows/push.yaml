@@ -48,7 +48,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: ${{ secrets.DOCKER_USERNAME }}/math-utils
+          images: ${{ secrets.DOCKER_USERNAME }}/dockerci
 
 
       - name: Build and push Docker Image
