@@ -8,4 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN pip install -e .
 
-CMD ["python", "-c", "import math_utils; print('math_utils is installed')"]
+EXPOSE 8080
+
+CMD ["python", "app.py"]
