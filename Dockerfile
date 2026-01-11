@@ -1,18 +1,11 @@
 FROM python:3.11-slim
 
-
 WORKDIR /app
 
-
-COPY requirements.txt ./
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+COPY . .
+RUN pip install -e .
 
-COPY src/ ./src/
-COPY tests/ ./tests/
-
-
-ENV PYTHONPATH=/app/src
-
-
-CMD ["pytest", "-q"]
+CMD ["python", "-c", "import math_utils; print('math_utils is installed')"]
